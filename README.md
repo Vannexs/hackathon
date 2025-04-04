@@ -28,7 +28,7 @@ A personal portfolio website showcasing my skills, projects, and professional jo
 
 ## Viewing
 
-You can view the portfolio online at [insert URL here].
+You can view the portfolio online at https://hackathon-brown-rho.vercel.app/.
 
 ## Contact
 
