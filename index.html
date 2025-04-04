@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="[Your Name] - Personal Portfolio Website">
+    <title>Victor - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <nav class="main-nav">
+                <div class="logo">
+                    <a href="#">Victor Chege</a>
+                </div>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#cv">CV</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <h1>Hi, I'm Victor</h1>
+                <p class="subtitle">A Passionate [Your Profession/Field]</p>
+                <a href="#projects" class="cta-button">View My Work</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="content-section">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <!-- Optional: Add an image -->
+                    <!-- <img src="your-photo.jpg" alt="Your Name" class="profile-pic"> -->
+                    <p> I am Victor, a passionate and versatile programmer with experience in HTML, C, C++, and Visual Basic, and I’m expanding my expertise in Python and JavaScript for automation, web development, scripting, and data analysis. 
+                        <br>I thrive on solving complex problems and building efficient solutions, whether it's through backend scripting, web development, or software automation. 
+                        <br>My curiosity also drives me to explore new technologies, and I’m currently diving into AWS cloud computing. Beyond coding, I have a deep interest in languages, actively learning Japanese and Mandarin.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="content-section skills-section">
+            <div class="container">
+                <h2>Skills</h2>
+                <ul class="skills-list">
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>Python</li>
+                    <li>Javascript</li>
+                    <li>C</li>
+                    <li>C++</li>
+                    <li>Git and GitHub</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="content-section projects-section">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <!-- Optional: <img src="project1.jpg" alt="Project One Screenshot"> -->
+                        <div class="project-info">
+                            <h3>Project One Title</h3>
+                            <p>A brief description of the project, highlighting key features and technologies used.</p>
+                            <a href="#" target="_blank" class="project-link">View Project</a>
+                            <!-- <a href="#" target="_blank" class="project-link">View Code</a> -->
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <!-- Optional: <img src="project2.jpg" alt="Project Two Screenshot"> -->
+                        <div class="project-info">
+                            <h3>Project Two Title</h3>
+                            <p>Another project description. Explain the problem it solves or its purpose.</p>
+                            <a href="#" target="_blank" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <!-- Optional: <img src="project3.jpg" alt="Project Three Screenshot"> -->
+                         <div class="project-info">
+                            <h3>Project Three Title</h3>
+                            <p>Description for the third project. Keep it concise and impactful.</p>
+                            <a href="#" target="_blank" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                    <!-- Add more project cards as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CV Download Section -->
+        <section id="cv" class="content-section cv-section">
+            <div class="container">
+                <h2>My Resume / CV</h2>
+                <p>Interested in learning more about my professional experience? Download my CV below.</p>
+                <a href="your_cv.pdf" download="[Your Name]_CV.pdf" class="cv-button">
+                    Download CV (PDF)
+                </a>
+                 <p class="cv-note">(Make sure you have a PDF reader installed)</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="content-section contact-section">
+            <div class="container">
+                <h2 class="contact-title" id="contact-title">Get In Touch</h2>
+                <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+                <p>Feel free to reach out via email:</p>
+                <a href="mailto:your.email@example.com" class="email-link">Email Me</a>
+                <!-- Optional: Add links to LinkedIn, GitHub etc. -->
+                <!--
+                <div class="social-links">
+                    <a href="#">LinkedIn</a> | <a href="#">GitHub</a> | <a href="#">Twitter</a>
+                </div>
+                -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span id="year"></span> [Your Name]. All rights reserved.</p>
+            <!-- Simple script to update year - remove if strictly no JS needed -->
+            <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+            <!-- If absolutely NO JS, manually update the year: -->
+            <!-- <p>© 2023 [Your Name]. All rights reserved.</p> -->
+        </div>
+    </footer>
+
+</body>
+</html>

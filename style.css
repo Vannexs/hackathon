@@ -1,0 +1,498 @@
+/* ---=== Global Styles & Variables ===--- */
+:root {
+    /* Light Mode (Luminous) Colors */
+    --bg-color: #f8f9fa; /* Very light gray/off-white */
+    --text-color: #343a40; /* Dark gray for text */
+    --primary-color: #007bff; /* Bright blue */
+    --secondary-color: #6c757d; /* Medium gray */
+    --accent-color: #28a745; /* Bright green */
+    --card-bg: #ffffff; /* White cards */
+    --border-color: #dee2e6; /* Light border */
+    --header-bg: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    --shadow-color: rgba(0, 123, 255, 0.2); /* Light blue shadow for luminous effect */
+    --glow-color: rgba(0, 123, 255, 0.4); /* Glow for buttons/links */
+
+    /* Transitions */
+    --transition-speed: 0.3s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Dark Mode Colors */
+        --bg-color: #1a1a1a; /* Very dark gray */
+        --text-color: #e9ecef; /* Light gray text */
+        --primary-color: #0d6efd; /* Slightly different blue for dark */
+        --secondary-color: #adb5bd; /* Lighter gray for secondary text */
+        --accent-color: #198754; /* Darker green */
+        --card-bg: #2c2c2c; /* Dark gray cards */
+        --border-color: #495057; /* Medium gray border */
+        --header-bg: rgba(44, 44, 44, 0.9); /* Slightly transparent dark gray */
+        --shadow-color: rgba(13, 110, 253, 0.3); /* Blue shadow for dark mode */
+        --glow-color: rgba(13, 110, 253, 0.5); /* Blue glow for dark mode */
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    font-size: 16px; /* Base font size */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Prevents bottom space */
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed), text-shadow var(--transition-speed);
+}
+
+a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 8px var(--glow-color); /* Luminous hover */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.75em;
+    line-height: 1.2;
+    color: var(--primary-color); /* Headings use primary color */
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: 1em;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ---=== Header & Navigation ===--- */
+.site-header {
+    background-color: var(--header-bg);
+    backdrop-filter: blur(5px); /* Subtle blur effect */
+    padding: 1rem 0;
+    position: sticky; /* Sticks to the top */
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color var(--transition-speed);
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color); /* Logo uses text color */
+    transition: color var(--transition-speed);
+}
+.logo a:hover {
+    color: var(--primary-color);
+    text-shadow: none; /* No glow on logo hover */
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 1.5rem; /* Space between nav items */
+}
+
+.main-nav ul li a {
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 0.5rem 0; /* Add padding for easier clicking */
+    position: relative;
+}
+
+.main-nav ul li a::after { /* Underline effect on hover */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width var(--transition-speed);
+}
+
+.main-nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* ---=== Hero Section ===--- */
+.hero-section {
+    min-height: 70vh; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); /* Luminous gradient */
+    color: #fff; /* White text on gradient */
+    padding: 4rem 0;
+}
+
+.hero-section h1 {
+    color: #fff;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.cta-button, .cv-button {
+    display: inline-block;
+    background-color: var(--bg-color); /* Use inverted bg for contrast */
+    color: var(--primary-color); /* Use primary text color */
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px; /* Pill shape */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color var(--transition-speed), color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+    border: 2px solid transparent;
+}
+
+.cta-button:hover, .cv-button:hover {
+    background-color: var(--primary-color);
+    color: #fff; /* White text on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--glow-color); /* Luminous glow on hover */
+    text-shadow: none;
+}
+
+/* ---=== Content Sections ===--- */
+.content-section {
+    padding: 4rem 0;
+}
+
+.content-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block; /* Allows centering with margin auto */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Underline effect for section titles */
+.content-section h2::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* ---=== About Section ===--- */
+.about-content {
+    max-width: 800px; /* Limit width for readability */
+    margin: 0 auto;
+    text-align: center; /* Center text if no image */
+}
+/* Optional: Styles if using a profile picture */
+/*
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    text-align: left;
+}
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 15px var(--shadow-color);
+}
+*/
+
+/* ---=== Skills Section ===--- */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.skills-list li {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.skills-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px var(--shadow-color);
+}
+
+/* ---=== Projects Section ===--- */
+.project-grid {
+    display: grid;
+    /* Responsive Grid: Adjusts columns automatically */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden; /* Ensures image corners are rounded if img is direct child */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    display: flex; /* Use flex for content structure */
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+}
+
+.project-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px var(--shadow-color); /* Luminous shadow */
+}
+
+/* Optional: If using images in cards */
+/*
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+*/
+
+.project-info {
+    padding: 1.5rem;
+    flex-grow: 1; /* Allows info to fill space */
+    display: flex;
+    flex-direction: column;
+}
+
+.project-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color); /* Project titles use text color */
+}
+
+.project-info p {
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Pushes the link to the bottom */
+    color: var(--secondary-color);
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: auto; /* Pushes link to bottom */
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 500;
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.project-link:hover {
+    background-color: var(--accent-color);
+    box-shadow: 0 0 10px var(--glow-color);
+    color: #fff;
+    text-shadow: none;
+}
+
+/* ---=== CV Section ===--- */
+.cv-section {
+    background-color: var(--card-bg); /* Slight background distinction */
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cv-button {
+    margin-top: 1rem;
+    /* Inherits base styles from .cta-button */
+    background-color: var(--accent-color); /* Green button for CV */
+    color: #fff;
+}
+
+.cv-button:hover {
+    background-color: var(--primary-color); /* Blue on hover */
+    color: #fff;
+}
+
+.cv-note {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    margin-top: 1rem;
+}
+
+
+/* ---=== Contact Section ===--- */
+.contact-section {
+    text-align: center;
+}
+
+.email-link {
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.5rem; /* Add padding for hover effect area */
+}
+.contact-title{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ---=== Footer ===--- */
+.site-footer {
+    background-color: var(--card-bg); /* Match CV section bg */
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+}
+
+
+/* ---=== Responsiveness ===--- */
+
+/* Medium screens (Tablets) */
+@media (max-width: 768px) {
+    html {
+        font-size: 15px; /* Slightly smaller base font */
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .main-nav {
+        flex-direction: column; /* Stack logo and nav links */
+        align-items: center;
+        gap: 1rem; /* Space between logo and nav list */
+    }
+
+    .main-nav ul {
+        justify-content: center; /* Center nav links */
+        flex-wrap: wrap; /* Allow nav links to wrap */
+        gap: 1rem; /* Adjust gap */
+        margin-top: 0.5rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
+    .hero-section .subtitle {
+        font-size: 1.3rem;
+    }
+
+    .project-grid {
+        /* Adjust minmax for slightly smaller cards if needed */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    /* Optional: Stack about section content if using image */
+    /*
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile-pic {
+        margin-bottom: 1.5rem;
+    }
+    */
+}
+
+/* Small screens (Mobiles) */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px; /* Even smaller base font */
+    }
+
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.3rem; }
+
+    .hero-section {
+        min-height: 50vh;
+    }
+
+     .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .hero-section .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .main-nav ul {
+        gap: 0.8rem; /* Smaller gap for nav items */
+    }
+     .main-nav ul li a {
+        padding: 0.3rem 0;
+    }
+
+
+    .content-section {
+        padding: 3rem 0;
+    }
+    .content-section h2 {
+        margin-bottom: 2rem;
+    }
+
+    .project-grid {
+        /* Ensure single column */
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .cta-button, .cv-button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+.
